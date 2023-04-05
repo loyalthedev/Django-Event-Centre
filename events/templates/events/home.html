@@ -1,7 +1,24 @@
-{% extends 'base.html' %}
-
-{% include 'navbar.html' %}
-
-{% block main %}
-    <h1>Home Page</h1>
+{% extends 'base.html' %} {% include 'navbar.html' %} {% block main %}
+<div class="container my-5">
+  <div class="row p-4">
+    <!-- Card One -->
+    {% for v in venues %}
+    <div class="col-sm-12 col-md-4 my-2">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-header">{{ v.name | capfirst }}</div>
+          <p>
+            {{v.address}}
+          </p>
+          <p>{{v.description | truncatechars:10}}</p>
+          <small>Price: {{v.capacity}}</small>
+          <button class="btn btn-outline-primary rounded-pill my-3 shadow">
+            Read more
+          </button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}
