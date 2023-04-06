@@ -12,9 +12,7 @@
           </p>
           <p>{{v.description | truncatechars:10}}</p>
           <small>Price: {{v.capacity}}</small>
-          <button class="btn btn-outline-primary rounded-pill my-3 shadow">
-            Read more
-          </button>
+          <a href="{% url 'read' v.id %}" class="btn btn-outline-primary rounded-pill my-3 shadow">Read more</a>
         </div>
       </div>
     </div>
